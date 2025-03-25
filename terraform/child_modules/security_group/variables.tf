@@ -27,7 +27,7 @@ variable "allow_all_outbound" {
 }
 
 variable "rules" {
-  type        = map(any)
+  type        = list(any)
   description = "A Map to Simplify Desired SG Rules. See comment below below for formatting."
 }
 
