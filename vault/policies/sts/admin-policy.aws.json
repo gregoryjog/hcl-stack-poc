@@ -1,0 +1,83 @@
+{
+
+"Version": "2012-10-17",
+
+"Statement": [
+
+{
+
+"Effect": "Allow",
+
+"Action": [
+
+"ec2:*",
+
+"s3:*",
+
+"rds:*",
+
+"dynamodb:*",
+
+"iam:*",
+
+"lambda:*",
+
+"cloudwatch:*",
+
+"logs:*",
+
+"ssm:*",
+
+"kms:*",
+
+"elasticloadbalancing:*",
+
+"autoscaling:*",
+
+"cloudformation:*",
+
+"sns:*",
+
+"sqs:*",
+
+"route53:*",
+
+"organizations:*",
+
+"account:*",
+
+"iam:CreateUser",
+
+"iam:CreateAccessKey",
+
+"iam:DeleteUser",
+
+"iam:UpdateUser",
+
+"iam:AttachUserPolicy",
+
+"iam:DetachUserPolicy",
+
+"iam:DeleteUserPolicy",
+
+"iam:PutUserPolicy"
+
+],
+
+"Resource": "*",
+
+"Condition": {
+
+"StringNotEquals": {
+
+"aws:PrincipalArn": "arn:aws:iam::*:role/OrganizationAccountAccessRole"
+
+}
+
+}
+
+}
+
+]
+
+}
