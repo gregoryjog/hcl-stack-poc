@@ -55,10 +55,6 @@ resource "aws_security_group_rule" "egress_default" {
   security_group_id = aws_security_group.default.id
 }
 
-#locals {
-#  vpn-cidrs = lower(var.env) == "prod" ? concat(var.vpn-cidrs-prod-add, var.vpn-cidrs) : var.vpn-cidrs
-#}
-
 resource "aws_security_group_rule" "rules" {
   for_each  = length(var.rules) != 0 ? local.map_extract : {}
   type      = "ingress"
